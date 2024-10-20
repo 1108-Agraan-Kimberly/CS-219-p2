@@ -15,8 +15,13 @@ int main(){
     uint32_t hexA, hexB;
 
     while(fscanf(txt, "%s 0x$X 0x$X") == 3){
-        
+        if(){
+
+        }
+        elseif(){
+            
+        }
     }
- printf("Meow");
+ printf("Meow \n");
 
 }
