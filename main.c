@@ -14,7 +14,9 @@ int main(){
     char op[10];
     uint32_t hexA, hexB;
 
-    while(fscanf(txt, "%s %")
+    while(fscanf(txt, "%s 0x$X 0x$X") == 3){
+        
+    }
  printf("Meow");
 
 }
