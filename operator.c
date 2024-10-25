@@ -39,7 +39,7 @@ int main(){
             }             
         }        
         else if(strcmp(op, asr) == 0 || strstr(op, asr)){
-            if(fscanf(commands, "%X %d", &hexA, &shift) == 2){
+            if(fscanf(commands, "%X %d", &hexA, &shift) == 2){ //ASR operation
                 if(shift > 2){
                 int32_t right = hexA >> shift;  
                 printf("%s 0x%X %d : 0x%X  \n", op, hexA, shift, right);
@@ -49,7 +49,19 @@ int main(){
                 printf("%s 0x%X %d : 0x%X  \n", op, hexA, shift, right);
                 }
             }
-        }          
+        }      
+        else if(strcmp(op, lsl) == 0 || strstr(op, lsl)){
+            if(fscanf(commands, "%X %d", &hexA, &shift) == 2){ //LSL operation
+                if(shift > 2){
+                int32_t left = hexA << shift;  
+                printf("%s 0x%X %d : 0x%X  \n", op, hexA, shift, left);
+                }
+                else{
+                int32_t left = hexA / 2;
+                printf("%s 0x%X %d : 0x%X  \n", op, hexA, shift, left);
+                }
+            }
+        }     
         else if(strcmp(op, sub) == 0 || strstr(op, sub)){
             if(fscanf(commands, "%X %X", &hexA, &hexB) == 2){ //SUB operation
             uint32_t subSum = hexA - hexB;
@@ -62,12 +74,13 @@ int main(){
                 printf("%s 0x%X 0x%X < 0x%X > \n", op, hexA, hexB, your);            
             }            
         }
-
-            else if(strcmp(op, xor) == 0 || strstr(op, xor)){ //XOR operation
+        else if(strcmp(op, xor) == 0 || strstr(op, xor)){
+            if(fscanf(commands, "%X %X", &hexA, &hexB) == 2){ //XOR operation
                 uint32_t naur = hexA ^ hexB;
                 printf("%s 0x%X 0x%X < 0x%X > \n", op, hexA, hexB, naur);
                         
             }
+        }
     }
     fclose(commands);
     return 0;
