@@ -5,7 +5,7 @@ Compile using ./gcc operator.c -o start
 To run the code use ./start
 
 ## More Machine Operations
-From the last project, the program simulated how a machine does an add operation. In this program it added 8 of the other operations. The beginning will read for the operations and compare them to each defined command. If it matches the defined commands it'll perform the operations. The additional operations include: 
+From the last project, the program simulated how a machine does an add operation. In this program it added 8 of the other operations. The beginning will read for the operations and compare them to each defined command. If it matches the defined commands it'll read the hex values or following values after the operation then perform the operations. The additional operations include: 
 
 **ADD** operation reads the two hex values and adds the second value to the first value in its binary conversion but returns the hex value of the sum.
 
